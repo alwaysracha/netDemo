@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <input id="text" type="text" value="" style="Width:20%"/> 
+    <button onclick="javascript:OnClick()">Click</button>
+
+    <p>Results</p>   
+    <div id="div" v-html="link.FUNCTIONVARIABLE">
+
+        <label id="resultLabel"></label>
+    </div>
+</div>
+
+<script type="text/javascript">
+  function OnClick() {
+    const Http = new XMLHttpRequest();
+	const url='https://azuredemoyash.azurewebsites.net/api/HttpTrigger1?code=ezPvfC5kvjX3vCf7Ne9X9kCyzjUTAroeOX83EtnUn7aYYm/NPj2CQw==?name'Karthik';
+	Http.open("GET", url);
+	Http.send();
+  document.getElementById("div").innerHTML = xmlhttp.responseText;
+   }
+</script>
